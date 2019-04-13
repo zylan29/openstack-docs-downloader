@@ -1,0 +1,9 @@
+networking-bagpipe
+networking-bgpvpn
+neutron-dynamic-routing
+neutron-fwaas
+networking-midonet
+ODL) Networking service Plug-in (networking-odl
+networking-ovn
+networking-sfc
+neutron-vpnaas
