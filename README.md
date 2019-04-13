@@ -13,9 +13,9 @@ The services and projects of OpenStack are listed in the files located in folder
 
 Edit file `openstack-docs-downloader.sh`, in which:
 
-1. put the projects listed file you care in `FILES`;
-2. put the Openstack release you care in `VERSIONS`;
-3. [optional] modify `NUM_THREADS` for the number of wget instances in parallel.
+1. put the projects listed file you care about in `FILES`;
+2. put the Opentsack releases you care about, such as stein and ocata, in `VERSIONS`;
+3. [optional] modify `NUM_THREADS` for the number of wget instances running in parallel.
 
 ## Run
 
