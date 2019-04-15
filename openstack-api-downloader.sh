@@ -1,12 +1,10 @@
 #!/bin/bash
 
-URL=https://docs.openstack.org
+URL=https://developer.openstack.org/api-ref/
 
 DIR="openstack-projects"
 
-FILES="openstack-services bare_metal_sub_projects networking_sub_projects using_libraries"
-
-VERSIONS="stein ocata"
+FILE="openstack-api"
 
 NUM_THREADS=8
 
@@ -16,16 +14,10 @@ rm -f $PACKAGES_FILE
 
 touch $PACKAGES_FILE
 
-for file in $FILES
+NAMES=`cat $DIR/$FILE`
+for name in $NAMES
 do
-    NAMES=`cat $DIR/$file`
-    for name in $NAMES
-    do
-        for version in $VERSIONS
-        do
-            echo $URL/$name/$version/ >> $PACKAGES_FILE
-        done
-    done
+    echo $URL/$name/ >> $PACKAGES_FILE
 done
 
 LOG_DIR="logs"
@@ -37,6 +29,3 @@ WGET_PARAMETERS="--mirror --convert-links --adjust-extension --page-requisites -
 cat $PACKAGES_FILE | parallel -j $NUM_THREADS wget $WGET_PARAMETERS --output-file=$LOG_DIR/wget-{#}.log {}
 
 rm -f $PACKAGES_FILE
-
-
-
