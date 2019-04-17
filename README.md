@@ -17,12 +17,20 @@ Edit file `openstack-docs-downloader.sh`, in which:
 2. put the Opentsack releases you care about, such as stein and ocata, in `VERSIONS`;
 3. [optional] modify `NUM_THREADS` for the number of wget instances running in parallel.
 
-## Run
+## Download OpenStack docs
 
 ```
 ./openstack-docs-downloader.sh
 ```
 
+## Download OpenStack APIs
+
+```
+./openstack-api-downloader.sh
+```
+
 ## Result
 
-Check the docs in local folder `docs.openstack.org/`.
+Check the docs in local folder `./docs.openstack.org/`.
+
+check APIs in local folder `./developer.openstack.org/`
